@@ -1,0 +1,2 @@
+class ArticleEvent < ApplicationRecord
+end
