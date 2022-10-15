@@ -1,0 +1,2 @@
+class ArticleLaunch < ApplicationRecord
+end

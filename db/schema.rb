@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_15_145936) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_15_150115) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_launches", force: :cascade do |t|
+    t.bigint "article_id", null: false
+    t.bigint "launch_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_article_launches_on_article_id"
+    t.index ["launch_id"], name: "index_article_launches_on_launch_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.boolean "featured"
@@ -38,4 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_145936) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "article_launches", "articles"
+  add_foreign_key "article_launches", "launches"
 end
