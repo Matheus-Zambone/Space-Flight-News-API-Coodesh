@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'open-uri'
+
+puts "iniciando seed"
+
+url = 'https://api.spaceflightnewsapi.net/v3/articles/'
+articles = JSON.parse(URI.open(url).read)
+
+articles.each do |article|
+  Article.create!(featured: article['featured'],
+                  title: article['title'],
+                  url: article['url'],
+                  imageUrl: article['imageUrl'],
+                  newsSite: article['newsSite'],
+                  summary: article['summary'],
+                  publishedAt: article['publishedAt'])
+end
+
+puts "seed realizado com sucesso"
