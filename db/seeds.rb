@@ -19,7 +19,9 @@ articles.each do |article|
                   imageUrl: article['imageUrl'],
                   newsSite: article['newsSite'],
                   summary: article['summary'],
-                  publishedAt: article['publishedAt'])
+                  publishedAt: article['publishedAt'],
+                  launches: article['launches'],
+                  events: article['events'])
 end
 
 puts "seed realizado com sucesso"
