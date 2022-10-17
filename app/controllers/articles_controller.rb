@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.order(created_at: :desc)
+    @articles = Article.page(params[:page]).per(params[:page_size])
 
     render json: @articles
   end
