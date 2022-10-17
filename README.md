@@ -1,24 +1,65 @@
-# README
+# Back-end Challenge 2021 🏅 - Space Flight News
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Este desafio consiste em desenvolver uma REST API utilizando os dados do projeto Space Flight News, uma API pública com informações relacionadas a voos espaciais.
 
-Things you may want to cover:
+This is a challenge by [Coodesh](https://coodesh.com/)
 
-* Ruby version
+## Lista de tecnologias usadas 👨🏻‍💻
 
-* System dependencies
+### Linguagem:
+* <b>Ruby 3.1.2</b>
 
-* Configuration
+### Framework:
+* <b>Rails 7.0.4</b>
 
-* Database creation
+### Banco de Dados:
+* <b>PostgreSQL 14.5</b>
 
-* Database initialization
+------------------------
 
-* How to run the test suite
+### Gems Adicionadas:
+- <b>Open-uri</b> -> Consumir outras APIs
+- <b>Rest-client</b> -> Consumir outras APIs
+- <b>Kaminari</b> -> Paginação
+- <b>Whenever</b> -> Agendar tasks com CRON
 
-* Services (job queues, cache servers, search engines, etc.)
+## Instalando Space-Flight-News-API-Coodesh
 
-* Deployment instructions
+Favor seguir os seguintes passos para a instalação após ter feito a clonagem na máquina:
 
-* ...
+No terminal da máquina, navegar até o diretório do projeto e executar:
+
+## Instalar as gems utilizadas
+```bash
+~ bundle install
+```
+
+## Criar banco de dados PostgreSQL
+```bash
+~ rails db:create
+```
+
+## Realizar as migrações no banco de dados
+```bash
+~ rails db:migrate
+```
+
+## Popular o banco de dados
+```bash
+~ rails db:seed
+```
+
+## Executar tarefa diária CRON
+```bash
+~ bundle exec whenever --update-crontab --set environment='development'
+```
+## Abrir servidor da API
+```bash
+~ rails s
+```
+
+
+## Uso da API
+
+Acessar:
+http://localhost:3000/
